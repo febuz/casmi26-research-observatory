@@ -1,0 +1,1193 @@
+{
+  "snapshot_at": "2026-11-23T12:31:47.580133+00:00",
+  "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
+  "code_commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+  "components": [
+    {
+      "id": "SRC-01",
+      "name": "Bronnen en catalogi",
+      "kind": "data",
+      "entities": "SourceVersion · DatasetVersion · Asset",
+      "rule": "Bronrechten, NIST-herkomst en versies afzonderlijk beoordelen.",
+      "code_path": "experiments/final_notebook/source_registry.json"
+    },
+    {
+      "id": "SPC-01",
+      "name": "Spectra en query",
+      "kind": "data",
+      "entities": "MolecularIdentity · Spectrum · Query",
+      "rule": "Ruwe pieken behouden; identiteit niet uit voorspelling invullen.",
+      "code_path": "docs/monografie_20261119/hoofdstukken/102_datamodel_en_datagovernance.md"
+    },
+    {
+      "id": "TRF-01",
+      "name": "Piekcuratie en ionvorm",
+      "kind": "transform",
+      "entities": "TransformVersion · TransformExecution",
+      "rule": "Parserfouten en niet-ondersteunde adducts expliciet loggen.",
+      "code_path": "experiments/final_notebook/casmi_final.py"
+    },
+    {
+      "id": "CAT-01",
+      "name": "Kandidaatgeneratie",
+      "kind": "transform",
+      "entities": "CandidateSetVersion · CandidateOrigin",
+      "rule": "Deduplicatie mag bronrelaties niet verwijderen.",
+      "code_path": "experiments/final_notebook/casmi_final.py"
+    },
+    {
+      "id": "ML-01",
+      "name": "Encoder en fingerprint",
+      "kind": "model",
+      "entities": "ModelVersion · Checkpoint · ExposureEvent",
+      "rule": "Train- en selectieblootstelling bepalen evaluatiegeschiktheid.",
+      "code_path": "experiments/final_notebook/fp_score.py"
+    },
+    {
+      "id": "ML-02",
+      "name": "Ensemble en rangschikking",
+      "kind": "model",
+      "entities": "EnsembleMember · CandidateFeature · RankedPrediction",
+      "rule": "Gewichten en normalisatiegroepen versieerbaar bewaren.",
+      "code_path": "experiments/final_notebook/casmi_final.py"
+    },
+    {
+      "id": "POL-01",
+      "name": "Contextueel routebeleid",
+      "kind": "model",
+      "entities": "PolicyVersion · Action · Reward",
+      "rule": "Alleen diagnostiek; geërfd panelprobleem blokkeert promotie.",
+      "code_path": "experiments/context_policy_20261123/policy.py"
+    },
+    {
+      "id": "VAL-01",
+      "name": "Evaluatie en attributie",
+      "kind": "evidence",
+      "entities": "PanelVersion · EffectComparison · MetricValue",
+      "rule": "MRR, RMSE en top-1 hebben verschillende betekenissen.",
+      "code_path": "reports/context_policy_20261123/out/context_policy.json"
+    },
+    {
+      "id": "SUB-01",
+      "name": "Officiële inzending",
+      "kind": "evidence",
+      "entities": "Submission · SubmissionScore · ClaimEvidence",
+      "rule": "Publiek totaalcontrast is geen geïsoleerd causaal effect.",
+      "code_path": "reports/transformation_lineage_20261123/lineage.json"
+    },
+    {
+      "id": "GOV-01",
+      "name": "Governance en herkomst",
+      "kind": "governance",
+      "entities": "SourceReview · EligibilityAssessment · Incident",
+      "rule": "Logische integratie deels ontwerp; geen volledige runtimehandhaving.",
+      "code_path": "experiments/final_notebook/source_policy.py"
+    }
+  ],
+  "versions": [
+    {
+      "id": "V9",
+      "mrr": 0.313,
+      "reference": "58699932"
+    },
+    {
+      "id": "V10",
+      "mrr": 0.334,
+      "reference": "58714147"
+    },
+    {
+      "id": "V11",
+      "mrr": 0.328,
+      "reference": "58726472"
+    },
+    {
+      "id": "V12",
+      "mrr": 0.341,
+      "reference": "58734466"
+    },
+    {
+      "id": "V13",
+      "mrr": 0.335,
+      "reference": "58745805"
+    }
+  ],
+  "transformations": [
+    {
+      "id": "TR-V10",
+      "baseline": "V9",
+      "candidate": "V10",
+      "delta": 0.02100000000000002,
+      "kernel": "develuse/casmi26-t9-e1",
+      "kernel_version": 1,
+      "receipt_sha256": "596ccc7a707262fd1f7eac07f48fe29a323af6d4b4114b0cdc27859dc2c946c0",
+      "operation": "one-step expansion and parent prior",
+      "causal_status": "observed_submission_contrast; paired hidden-label attribution unavailable"
+    },
+    {
+      "id": "TR-V11",
+      "baseline": "V10",
+      "candidate": "V11",
+      "delta": -0.006000000000000005,
+      "kernel": "develuse/casmi26-t9-e1c",
+      "kernel_version": 1,
+      "receipt_sha256": "fe9d6bea8c63082f64c73d5c7f150cb25490847d95abe063ac55502e45003478",
+      "operation": "hard catalogue-similarity gate",
+      "causal_status": "observed_submission_contrast; paired hidden-label attribution unavailable"
+    },
+    {
+      "id": "TR-V12",
+      "baseline": "V10",
+      "candidate": "V12",
+      "delta": 0.007000000000000006,
+      "kernel": "develuse/casmi26-t9-x7",
+      "kernel_version": 1,
+      "receipt_sha256": "910a95a873d528123ba871c76947a55b8917a6eab84a6444d43c846624cbbed1",
+      "operation": "own PubChem retrieval and prefilter",
+      "causal_status": "observed_submission_contrast; paired hidden-label attribution unavailable"
+    },
+    {
+      "id": "TR-V13",
+      "baseline": "V10",
+      "candidate": "V13",
+      "delta": 0.0010000000000000009,
+      "kernel": "develuse/casmi26-t9-e0",
+      "kernel_version": 1,
+      "receipt_sha256": "e6eb617775080a2554f7455b8e62d0a4c1665f0fb3ada7470875c08a37a328eb",
+      "operation": "zero prior for expansion candidates",
+      "causal_status": "observed_submission_contrast; paired hidden-label attribution unavailable"
+    }
+  ],
+  "policy": {
+    "clean_delta": -0.00024404761904772698,
+    "stress_delta": -0.000414682539682687,
+    "reward_rmse": [
+      0.10538653359991305,
+      0.11307992719912321
+    ],
+    "top1_delta": 0.0,
+    "promotion_eligible": false,
+    "status": "rejected_no_gain",
+    "limitation": "Hergebruikt NP DEV-panel met gemeld catalogusmetadata-lek. Geen onafhankelijke bevestiging.",
+    "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
+  },
+  "events": [
+    {
+      "time": "2026-11-23T12:31:47.579870+00:00",
+      "type": "baseline_registered",
+      "component_ids": [
+        "SUB-01",
+        "POL-01",
+        "VAL-01",
+        "GOV-01"
+      ],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Momentopname geregistreerd; dit is geen nieuw trainingsresultaat."
+    }
+  ],
+  "glossary": [
+    {
+      "term_id": "BG001",
+      "term": "Moleculaire identiteit",
+      "definition": "Connectiviteit onder een gespecificeerde canonicalisatie. Vermeld metric-key én algoritmeversie."
+    },
+    {
+      "term_id": "BG002",
+      "term": "Structuurrepresentatie",
+      "definition": "Aangeleverde of gegenereerde schrijfwijze, zoals SMILES. Verschillende representaties kunnen dezelfde wedstrijdidentiteit hebben."
+    },
+    {
+      "term_id": "BG003",
+      "term": "Spectrum",
+      "definition": "Eén acquisitie met precursor, ionisatiecondities en fragmentpieken. Een spectrum is geen onafhankelijke moleculaire identiteit."
+    },
+    {
+      "term_id": "BG004",
+      "term": "Query",
+      "definition": "Identificatievraag die één of meerdere spectra groepeert en één ranglijst oplevert."
+    },
+    {
+      "term_id": "BG005",
+      "term": "Adduct",
+      "definition": "Geannoteerde ionvorm met bekende massaschuiving en lading, zoals [M+H]+. Een onparseerbare annotatie krijgt een foutstatus."
+    },
+    {
+      "term_id": "BG006",
+      "term": "Polariteit",
+      "definition": "Positieve of negatieve ionmodus van de meting. Afleiden uit een ander spectrum van dezelfde stof vereist een aparte onderbouwing."
+    },
+    {
+      "term_id": "BG007",
+      "term": "Botsingsenergie",
+      "definition": "Acquisitieconditie voor fragmentatie met vastgelegde eenheid. Een energielijst en haar gemiddelde zijn verschillende gegevens."
+    },
+    {
+      "term_id": "BG008",
+      "term": "Retentietijd",
+      "definition": "Tijdpositie onder een concrete chromatografische methode. Overdracht tussen kolommen of gradiënten vraagt kalibratie."
+    },
+    {
+      "term_id": "BG009",
+      "term": "Meetbron",
+      "definition": "Oorspronkelijk laboratorium of spectrumrepository. Onderscheid dit van de catalogus waaruit kandidaten komen."
+    },
+    {
+      "term_id": "BG010",
+      "term": "Bronrelease",
+      "definition": "Gedateerde versie van oorspronkelijke gegevens met toegangs- en gebruiksvoorwaarden."
+    },
+    {
+      "term_id": "BG011",
+      "term": "Asset",
+      "definition": "Concreet bestand of checkpoint met inhoudshash, formaat, omvang en locatie. Een slug alleen is onvoldoende identiteit."
+    },
+    {
+      "term_id": "BG012",
+      "term": "Datasetversie",
+      "definition": "Vastgelegde bundel assets met een doel en bronmanifest. Publicatie verandert haar trainingsblootstelling niet."
+    },
+    {
+      "term_id": "BG013",
+      "term": "Lineage",
+      "definition": "Herleidbare afleidingsrelaties tussen bron, transform, dataset, model, run en resultaat."
+    },
+    {
+      "term_id": "BG014",
+      "term": "Provenance",
+      "definition": "Breder bewijs over oorsprong, auteur, licentie, tijdstip en bewerking. Lineage is een onderdeel hiervan."
+    },
+    {
+      "term_id": "BG015",
+      "term": "Kandidaat",
+      "definition": "Eén mogelijke structuur voor een query. Een kandidaat is nog geen bevestigde identificatie."
+    },
+    {
+      "term_id": "BG016",
+      "term": "Kandidaatset",
+      "definition": "Unieke identiteiten die de scorer voor een query ontvangt, met bronrelaties en generatorversie."
+    },
+    {
+      "term_id": "BG017",
+      "term": "Kandidaatdekking",
+      "definition": "Aandeel evaluatie-identiteiten waarvan de waarheid beschikbaar is vóór uiteindelijke ranking. Leg de exacte selectiestap vast."
+    },
+    {
+      "term_id": "BG018",
+      "term": "Kandidaatdruk",
+      "definition": "Aantal concurrerende structuren per query of massavenster. Meer kandidaten betekent niet automatisch hogere dekking."
+    },
+    {
+      "term_id": "BG019",
+      "term": "Isomeerconcurrentie",
+      "definition": "Aantal concurrerende structuren met dezelfde relevante formule. Het totaal aantal massavensterkandidaten is een andere maat."
+    },
+    {
+      "term_id": "BG020",
+      "term": "Bibliotheekoverlap",
+      "definition": "Aanwezigheid van dezelfde gevalideerde identiteit in een benoemde spectrale bibliotheekversie. Een hoge gelijkenisscore alleen bewijst deze overlap niet."
+    },
+    {
+      "term_id": "BG021",
+      "term": "Experimentele klasse",
+      "definition": "Door een panelmasker bepaalde herkennings- of onbekendheidsconditie. Zij is geen gemeten stofklasse of vaststaand aandeel van de verborgen test."
+    },
+    {
+      "term_id": "BG022",
+      "term": "Scaffold",
+      "definition": "Volgens een benoemde methode afgeleid moleculair skelet dat kan worden gebruikt voor splitsing. Een lege of acyclische scaffold vereist expliciete behandeling."
+    },
+    {
+      "term_id": "BG023",
+      "term": "TRAIN",
+      "definition": "Identiteiten die het fitten van modelparameters beïnvloeden. Vermeld ook eventuele pretraining."
+    },
+    {
+      "term_id": "BG024",
+      "term": "DEV",
+      "definition": "Data voor architectuur, drempel, feature- en modelselectie. Herhaald gebruik kan selectieoptimisme veroorzaken."
+    },
+    {
+      "term_id": "BG025",
+      "term": "CONFIRM",
+      "definition": "Vooraf gereserveerde populatie voor een bevroren vergelijking. De onafhankelijke rol vervalt na gebruik voor keuzes."
+    },
+    {
+      "term_id": "BG026",
+      "term": "Blootstelling",
+      "definition": "Gebruik van gegevens of uitkomsten in training, checkpointselectie, analyse of andere modelkeuzes. Leg doel en tijdstip vast."
+    },
+    {
+      "term_id": "BG027",
+      "term": "Datacontaminatie",
+      "definition": "Ongewenste overdracht waardoor de beoordeling informatie bevat die voor de gekozen onbekendheid had moeten worden uitgesloten."
+    },
+    {
+      "term_id": "BG028",
+      "term": "Hindsight",
+      "definition": "Achteraf gemaakte keuze of uitleg met kennis van een resultaat. Een vooraf bestaande formule kan alsnog adaptief voor een slot worden gekozen."
+    },
+    {
+      "term_id": "BG029",
+      "term": "Modelversie",
+      "definition": "Combinatie van architectuur, gewichten, featureschema, code en trainingsherkomst."
+    },
+    {
+      "term_id": "BG030",
+      "term": "Ensemble",
+      "definition": "Vastgelegde combinatie van voorspellers met gewichten of selectieregels. Het aantal notebooks bewijst geen foutdiversiteit."
+    },
+    {
+      "term_id": "BG031",
+      "term": "Run",
+      "definition": "Eén uitvoering met inputversies, platform, instellingen en status. Een geslaagde uitvoercontrole bewijst geen nauwkeurigheidswinst."
+    },
+    {
+      "term_id": "BG032",
+      "term": "Fallback",
+      "definition": "Expliciet gedocumenteerde vervangingsroute bij tijd-, input- of uitvoerproblemen. Rapporteer hoeveel queries hiervan gebruikmaakten."
+    },
+    {
+      "term_id": "BG033",
+      "term": "MRR@25",
+      "definition": "Gemiddelde inverse rang van de eerste juiste identiteit binnen de eerste 25. Afwezig betekent nul bijdrage."
+    },
+    {
+      "term_id": "BG034",
+      "term": "Top-1",
+      "definition": "Aandeel queries met de correcte identiteit op de eerste positie. Het is geen synoniem voor MRR."
+    },
+    {
+      "term_id": "BG035",
+      "term": "Recall@25",
+      "definition": "Aandeel queries waarvan de juiste identiteit in de geëxporteerde eerste 25 aanwezig is."
+    },
+    {
+      "term_id": "BG036",
+      "term": "Fingerprint-RMSE",
+      "definition": "Wortel van de gemiddelde gekwadrateerde fout van voorspelde bitkansen tegenover bitlabels op een beschreven populatie."
+    },
+    {
+      "term_id": "BG037",
+      "term": "Brier-score",
+      "definition": "Gemiddelde gekwadrateerde kansfout. Bij dezelfde binaire fingerprintdefinitie is de fingerprint-RMSE de wortel hiervan."
+    },
+    {
+      "term_id": "BG038",
+      "term": "Robuustheid",
+      "definition": "Prestatie onder vooraf vastgelegde plausibele verstoringen of domeinverschuivingen. Vermeld recept en referentiemeting."
+    },
+    {
+      "term_id": "BG039",
+      "term": "Causaal effect",
+      "definition": "Verschil door een afgebakende ingreep onder expliciete aannamen en controles. Een versieverschil alleen identificeert dit effect niet."
+    },
+    {
+      "term_id": "BG040",
+      "term": "Ablatie",
+      "definition": "Gecontroleerde vergelijking waarin een component of informatiebron volgens een vooraf gekozen ontwerp wordt weggelaten of gewijzigd."
+    },
+    {
+      "term_id": "BG041",
+      "term": "Preregistratie",
+      "definition": "Vóór de relevante uitkomst vastgelegde hypothese, varianten en beslisregel met controleerbare chronologie. Een lokale datum alleen is beperkt bewijs."
+    },
+    {
+      "term_id": "BG042",
+      "term": "Promotiepoort",
+      "definition": "Vooraf vastgelegde criteria voor doorstroom naar een volgende onderzoeks- of inzetfase. De hoogste waargenomen score hoeft de poort niet te halen."
+    },
+    {
+      "term_id": "BG043",
+      "term": "Officiële inzending",
+      "definition": "Platformgeregistreerde modelbeoordeling met kernelversie en referentie. Een lokaal CSV-bestand is nog geen inzending."
+    },
+    {
+      "term_id": "BG044",
+      "term": "Publieke score",
+      "definition": "Score op het door Kaggle publiek beoordeelde deel. Houd deze gescheiden van ontwikkel- en private resultaten."
+    },
+    {
+      "term_id": "BG045",
+      "term": "Private score",
+      "definition": "Platformscore voor de verborgen eindbeoordeling. Deze kan na de wedstrijd een andere rangorde opleveren."
+    },
+    {
+      "term_id": "BG046",
+      "term": "Onbeslist",
+      "definition": "Uitkomst waarbij de gegevens de vooraf gekozen beslisgrens niet voldoende onderscheiden. Het is geen gemeten nul-effect."
+    },
+    {
+      "term_id": "BG047",
+      "term": "Ontbrekende waarde",
+      "definition": "Niet beschikbare of niet-toepasselijke meting met expliciete reden. Numerieke nul is alleen voor een daadwerkelijk berekende nul."
+    },
+    {
+      "term_id": "BG048",
+      "term": "Openbaar",
+      "definition": "Zonder private toegang gedeelde asset. Dit verleent op zichzelf geen herdistributierecht of toestemming voor iedere gebruiksvorm."
+    },
+    {
+      "term_id": "BG049",
+      "term": "NIST-afleiding",
+      "definition": "Asset of checkpoint dat inhoud of training ontleent aan een uitgesloten NIST-bron. Openbare beschikbaarheid van de afleiding neemt de herkomst niet weg."
+    },
+    {
+      "term_id": "BG050",
+      "term": "Bewijsclaim",
+      "definition": "Afgebakende uitspraak met bron, bewijsstatus, toepassingsgebied en beperkingen. Een gesigneerd record borgt integriteit, niet de waarheid van de claim."
+    }
+  ],
+  "limits": [
+    "Exact input bytes not exhaustively rehashed",
+    "Receipt export hash describes commit output, not independently observed hidden-rerun output",
+    "Observed public-score contrasts do not isolate every mediator or quantify hidden-test uncertainty",
+    "No pipeline component promoted solely from this graph"
+  ],
+  "public_scope": "Gecontroleerde momentopname; geen ruwe datasets, secrets, privélogs of testlabels. Geen live Kaggle-accountkoppeling.",
+  "git_snapshots": [
+    {
+      "sha": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "f42ae2e147e80f62f839c83bc271dc3b4f25af81",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "091499b41ed9737fa7d5217525d49607d9181c6b",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "849b4ab988ef2921127da2b42d125e20c0bbd30a",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "76513847c3c2b59af3122372ba3e3ea491123f60",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "415dcac5cecceb708bae26bdd86809698eeddc5e",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "85af083c37c632e5efefe78dea1feb8e4107f7de",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "201c6288a227ee45475733acad5d5340040d9118",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "652181cf21ba2947e044c964ec64b335db75456b",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "313b7cb065d62fb0e1c39972710f5656fe82cc3a",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "67f45e4b849db434184f3effeb6970e3bb0740a0",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "ca9839ef97185243db72fd7854a17860772af20c",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "6119ab137c4b0e43d8951feb6664945fd10de098",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "496449efd3d3213e44476cad99f78968cc7db9a8",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "c79602c398b87e751aa5cf54cafa292801c706a2",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "3e43a01bd16add089a7e8ae333b017ec05870f5d",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "bc26066e4613299f8152535738e00a2d86c17ad7",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "0183ef1f5ebcc107639317de058fe8c45a8c138b",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "eb43cae1685f98dc290ba540e38fffda8e4165ed",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
+    {
+      "sha": "35b9d3898613995b7a8d396bb37d16a2d86f5bc3",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    }
+  ]
+}
