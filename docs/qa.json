@@ -1,0 +1,22 @@
+{
+  "tested_at": "2026-11-23T12:35:32.487441+00:00",
+  "surface": "isolated headless Chrome local route",
+  "status": "passed",
+  "checks": [
+    "14 stable component IDs",
+    "6 tab views",
+    "official score display",
+    "glossary filtering",
+    "structured run event display",
+    "historical Git selector",
+    "public source links",
+    "prefilled issue URLs",
+    "mobile viewport no overflow",
+    "no JavaScript runtime errors"
+  ],
+  "limits": [
+    "No claim of independent scientific validation",
+    "Private source links require membership",
+    "Kaggle metrics are snapshot data, not live account calls"
+  ]
+}
