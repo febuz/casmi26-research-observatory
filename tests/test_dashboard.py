@@ -29,6 +29,12 @@ with sync_playwright() as p:
  page.get_by_role('button',name='05 Proceslogs en Git').click()
  assert 'observatory-browser-qa-v1' in page.locator('#events').inner_text()
  page.locator('#gitB').select_option(index=2);assert '...' in page.locator('#compare').get_attribute('href')
+ page.get_by_role('button',name='07 Methodelandschap').click()
+ page.locator('#landscape-queue article').first.wait_for()
+ assert page.locator('#landscape-queue article').count()==6
+ page.locator('#landscape-search').fill('LambdaRank')
+ assert page.locator('#landscape-counts tr').count()==1
+ assert 'niet promoveren' in page.locator('#landscape-result').inner_text()
  page.get_by_role('button',name='01 Proces en lineage').click()
  page.locator('[data-select="LOG-01"]').first.click()
  assert 'casmi26-research-observatory/blob/main/tools/log_event.py' in page.locator('#detail a').first.get_attribute('href')

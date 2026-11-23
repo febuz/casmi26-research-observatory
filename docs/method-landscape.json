@@ -1,0 +1,482 @@
+{
+  "snapshot": "2026-11-22",
+  "source_sha256": "03aefd6a96921933e3c42e97d3a25841d3517fefe68f0d8bd38bc0e45d03589e",
+  "source_merkle_root": "98cd8bb7580e4364bd6c20f3291e4a019348c6731efea3b7801d630c493309e1",
+  "source_url": "https://github.com/Knitweb/chemfield/tree/main/ms-identification/casmi26",
+  "notebooks": 2046,
+  "methods": [
+    {
+      "method": "adduct handling",
+      "mentioned_notebooks": 1529,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 486,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.9411446240981166,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "ensemble/blend",
+      "mentioned_notebooks": 1453,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 489,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.9964851402806509,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "BRICS / generation",
+      "mentioned_notebooks": 1433,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 462,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.9546042579147911,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "collision energy",
+      "mentioned_notebooks": 1403,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 478,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0087831223767965,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "fragment rescoring",
+      "mentioned_notebooks": 1401,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 468,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.9890888356569786,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "analog/network propagation",
+      "mentioned_notebooks": 1339,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 464,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0260416385210902,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "fingerprint net",
+      "mentioned_notebooks": 1321,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 462,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0355396681240694,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "tautomer canonical key",
+      "mentioned_notebooks": 1319,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 461,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0348650306277285,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "PubChem",
+      "mentioned_notebooks": 1309,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 461,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0427707986233568,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "COCONUT",
+      "mentioned_notebooks": 1288,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 432,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.9931056799489442,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "MetFrag",
+      "mentioned_notebooks": 1260,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 439,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0316242850251534,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "RRF",
+      "mentioned_notebooks": 1239,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 434,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0371605877014398,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "ICEBERG",
+      "mentioned_notebooks": 1160,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 419,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0695069614252208,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "documentation prior",
+      "mentioned_notebooks": 1157,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 425,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.087634945909064,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "GLACIER",
+      "mentioned_notebooks": 1142,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 408,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0578440342557933,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "DreaMS",
+      "mentioned_notebooks": 1061,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 387,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.0799985269064627,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "lib_max gate",
+      "mentioned_notebooks": 1006,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 374,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.1007817062890386,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "cosine similarity",
+      "mentioned_notebooks": 968,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 265,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.8105841336666227,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "LightGBM",
+      "mentioned_notebooks": 937,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 285,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.9006018839570202,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "Morgan/ECFP",
+      "mentioned_notebooks": 783,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 202,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.7638660168227512,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "LOTUS",
+      "mentioned_notebooks": 739,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 318,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.2741197965725968,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "external library",
+      "mentioned_notebooks": 738,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 317,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.2718341510477333,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "NPAtlas",
+      "mentioned_notebooks": 729,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 311,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.2631660443205708,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "entropy similarity",
+      "mentioned_notebooks": 645,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 148,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.6794063204657894,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "rank-1 lock",
+      "mentioned_notebooks": 496,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 224,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.3371924746743848,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "NP prior",
+      "mentioned_notebooks": 446,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 215,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.427352313213449,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "FIORA",
+      "mentioned_notebooks": 405,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 173,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.2647906951814334,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "transformer",
+      "mentioned_notebooks": 177,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 45,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.7527778459123352,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "LambdaRank",
+      "mentioned_notebooks": 112,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 56,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.4804630969609263,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "SIRIUS/CSI:FingerID",
+      "mentioned_notebooks": 72,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 9,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.3701157742402315,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "modified cosine",
+      "mentioned_notebooks": 67,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 18,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.795472708814826,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "MassSpecGym",
+      "mentioned_notebooks": 54,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 10,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.5483196655410837,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "MIST",
+      "mentioned_notebooks": 45,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 6,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.3947901591895803,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "MAGMa",
+      "mentioned_notebooks": 35,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 1,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.08459789125491007,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "CFM-ID",
+      "mentioned_notebooks": 32,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 4,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.3701157742402315,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "UNIQ",
+      "mentioned_notebooks": 25,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 9,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 1.065933429811867,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "XGBoost",
+      "mentioned_notebooks": 24,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 0,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.0,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "faiss/kNN",
+      "mentioned_notebooks": 7,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 2,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.8459789125491006,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "CatBoost",
+      "mentioned_notebooks": 6,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 0,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.0,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "JESTR",
+      "mentioned_notebooks": 5,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 0,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.0,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "GNN",
+      "mentioned_notebooks": 5,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 0,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.0,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "APRIOR",
+      "mentioned_notebooks": 4,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 4,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 2.960926193921852,
+      "evidence": "text mentions; execution and causal performance not established"
+    },
+    {
+      "method": "MS2DeepScore",
+      "mentioned_notebooks": 2,
+      "all_notebooks": 2046,
+      "rank_11_500_mentions": 0,
+      "rank_11_500_notebooks": 691,
+      "mention_ratio": 0.0,
+      "evidence": "text mentions; execution and causal performance not established"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "LAND-01",
+      "component": "ML-02",
+      "idea": "Diversiteit van rangschikkingsdoelstellingen",
+      "hypothesis": "Anders geoptimaliseerde fouten kunnen LambdaRank aanvullen.",
+      "test": "Bestaande 3-seed LambdaRank versus 3-seed XE-NDCG en vaste 50:50-menging.",
+      "status": "tested_rejected_exploratory",
+      "next": "Geen extra menggewichten op hetzelfde panel zoeken; eerst complementaire fouten en nieuw panel.",
+      "family": "leren rangschikken"
+    },
+    {
+      "id": "LAND-02",
+      "component": "CAT-01",
+      "idea": "Retrieval en chemische kandidaatgeneratie verbinden",
+      "hypothesis": "Bronuitbreiding helpt vooral wanneer de juiste structuur ontbreekt; generator en ranker moeten samen worden getoetst.",
+      "test": "Vaste massavensters; kandidaatrecall, toegevoegde correcte identiteiten, isomeerdruk en gepaarde MRR.",
+      "status": "proposed",
+      "next": "Verbind dekking met kandidaat-origin; geen grotere catalogus als automatisch succes tellen.",
+      "family": "bronnen en generatie"
+    },
+    {
+      "id": "LAND-03",
+      "component": "ML-02",
+      "idea": "Voorwaarts en invers bewijs combineren",
+      "hypothesis": "Fingerprintovereenkomst en fragmentverklaring maken deels verschillende isomeerfouten.",
+      "test": "Zelfde kandidaten; baseline, voorwaarts-only, inverse-only, vaste fusie; discordante wins/losses per scaffold.",
+      "status": "proposed",
+      "next": "Gebruik alleen toegelaten gewichten met volledige train/validatie-uitsluitingen.",
+      "family": "brug academisch en wedstrijdcluster"
+    },
+    {
+      "id": "LAND-04",
+      "component": "POL-01",
+      "idea": "Selectieve rekentoewijzing",
+      "hypothesis": "Een goedkope poort kan dure aanvullende scores overslaan bij aantoonbaar lage selectieve fout.",
+      "test": "Risk-coverage, top25-pariteit, MRR, top1 en p50/p95 tijd tegenover native volledige inferentie.",
+      "status": "proposed",
+      "next": "Geen Jev-confidence gelijkstellen aan correctheidskans; offline inzet eerst aantonen.",
+      "family": "compute en onzekerheid"
+    },
+    {
+      "id": "LAND-05",
+      "component": "ML-01",
+      "idea": "Energie- en polariteitgebonden fragmentconsistentie",
+      "hypothesis": "Behoud van afzonderlijke collision energies en ionvormen maakt structuuronderscheid scherper dan middelen.",
+      "test": "Identieke trainingssplits; energy-list intact versus mean-only; source-heldout en noise stress.",
+      "status": "proposed",
+      "next": "Ontbrekende metadata expliciet houden; geen metadata van andere acquisitie lenen.",
+      "family": "chemische meetinformatie"
+    },
+    {
+      "id": "LAND-06",
+      "component": "VAL-01",
+      "idea": "Recepten en forkfamilies als analyseeenheid",
+      "hypothesis": "Verschillende notebooknamen overschatten effectieve methodediversiteit.",
+      "test": "Per fork/codefamilie aggregeren; mention lift apart van residuele foutoverlap rapporteren.",
+      "status": "design",
+      "next": "47 bekende forks zijn geen volledige genealogie; ook code-overlap onderzoeken.",
+      "family": "validatie"
+    }
+  ],
+  "measured_ensemble": {
+    "min_proxy_delta": {
+      "clean": -0.021801679618522307,
+      "perturbed": -0.015838835250477135
+    },
+    "baseline_objectives": [
+      "lambdarank",
+      "lambdarank",
+      "lambdarank"
+    ],
+    "promotion_eligible": false,
+    "scope": "Exploratory reused NP DEV with reported truth-row metadata leakage. No HOLDOUT/CONFIRM or competition labels. Router/fp upstream exposure not resolved. Not eligible for promotion.",
+    "base_inference_seconds": 10.104243945000007,
+    "xe_inference_seconds": 7.702252235999936,
+    "blend_inference_seconds_estimate": 17.806496180999943,
+    "timing_limit": "Single sequential measurements, different execution order; not a controlled speed benchmark."
+  },
+  "rules": [
+    "Notebook mention is not implementation evidence.",
+    "Co-occurrence lift is not predictive complementarity.",
+    "Rank-band association is not a causal effect or leaderboard performance forecast.",
+    "No public top-10 notebook evidence in this snapshot.",
+    "Do not tune another grid after rejection on reused DEV; require a new frozen confirmation panel."
+  ]
+}
