@@ -1,7 +1,7 @@
 {
-  "snapshot_at": "2026-11-23T13:52:03.777437+00:00",
+  "snapshot_at": "2026-11-23T14:12:16.743982+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
-  "code_commit": "84c5b3fc44647431ed907da8c70621ab523c3a80",
+  "code_commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
   "components": [
     {
       "id": "UI-01",
@@ -553,6 +553,60 @@
         "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
       },
       "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "9cbf4c06-4c74-4a2c-b203-d94d7fdd42ce",
+      "time": "2026-11-23T14:11:46.942692+00:00",
+      "type": "run_started",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
+      "run_id": "hx00-corrected-panel-contract",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: started. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "event_id": "6bb35043-27c3-400b-a5a8-67a23fedc2cf",
+      "time": "2026-11-23T14:11:46.983662+00:00",
+      "type": "run_started",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
+      "run_id": "fpnet-foldsafe-v5-explicit-exclusion",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: started. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "event_id": "426f0a92-fb76-4468-96bc-3a3ac75955e4",
+      "time": "2026-11-23T14:11:47.024348+00:00",
+      "type": "run_started",
+      "component_ids": [
+        "CAT-01"
+      ],
+      "commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
+      "run_id": "h1-pubchem-panels-amended",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: started. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "time": "2026-11-23T14:12:16.743776+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
   ],
   "glossary": [
@@ -815,6 +869,43 @@
   ],
   "public_scope": "Gecontroleerde momentopname; geen ruwe datasets, secrets, privélogs of testlabels. Geen live Kaggle-accountkoppeling.",
   "git_snapshots": [
+    {
+      "sha": "2df1500a40623a230f2df167527c8a02db78d7f7",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
     {
       "sha": "84c5b3fc44647431ed907da8c70621ab523c3a80",
       "scores": [
@@ -1483,43 +1574,6 @@
     },
     {
       "sha": "415dcac5cecceb708bae26bdd86809698eeddc5e",
-      "scores": [
-        {
-          "version": "2026-11-18.execution_repair.full.v1",
-          "public_mrr": "0.177"
-        },
-        {
-          "version": "2026-11-19.v4_multi_library_override.v1",
-          "public_mrr": 0.263
-        },
-        {
-          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
-          "public_mrr": 0.284
-        },
-        {
-          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
-          "public_mrr": 0.284
-        },
-        {
-          "version": "2026-11-21.v6.official.v1",
-          "public_mrr": 0.298
-        },
-        {
-          "version": "2026-11-21.v7.official.v1",
-          "public_mrr": 0.303
-        },
-        {
-          "version": "2026-11-21.v8.official.v1",
-          "public_mrr": 0.294
-        },
-        {
-          "version": "2026-11-22.v9.official.v2",
-          "public_mrr": 0.313
-        }
-      ]
-    },
-    {
-      "sha": "85af083c37c632e5efefe78dea1feb8e4107f7de",
       "scores": [
         {
           "version": "2026-11-18.execution_repair.full.v1",
