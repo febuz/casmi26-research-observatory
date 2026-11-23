@@ -31,7 +31,18 @@ def build():
   observed[label]=hashlib.sha256((SRC/path).read_bytes()).hexdigest()
  local_events=STATE/'process_events.jsonl'
  new_events=[json.loads(x) for x in local_events.read_text().splitlines() if x.strip()] if local_events.exists() else []
- payload={'observed':observed,'git':commit,'event_ids':[e['event_id'] for e in new_events]}
+ registry=read('VERSIONS.json')
+ registry_seen={r['version']:hashlib.sha256(json.dumps(r,sort_keys=True).encode()).hexdigest() for r in registry if isinstance(r.get('version'),str)}
+ old_seen=previous.get('registry_seen',{})
+ if old_seen:
+  for r in registry:
+   name=r.get('version','')
+   if registry_seen.get(name)==old_seen.get(name):continue
+   import re
+   if not re.fullmatch(r'[A-Za-z0-9_.-]{1,100}',name):continue
+   vals={k:r[k] for k in ['public_lb_score','cv_dev_mrr25','cv_holdout_mrr25','class_accuracy'] if isinstance(r.get(k),(float,int))}
+   new_events.append({'event_id':'registry-'+registry_seen[name], 'time':now(), 'type':'registry_record_updated','component_ids':['VAL-01'],'commit':commit,'run_id':name,'metrics':vals,'message':'Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren.'})
+ payload={'observed':observed,'git':commit,'event_ids':[e['event_id'] for e in new_events if not e['event_id'].startswith('registry-')],'registry_seen':registry_seen}
  fingerprint=hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()
  events=previous.get('events',[])
  if previous.get('fingerprint')!=fingerprint:
@@ -57,7 +68,7 @@ def build():
  encoded=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
  target=ROOT/'docs/snapshot.json';changed=not target.exists() or target.read_text()!=encoded
  target.write_text(encoded)
- (STATE/'state.json').write_text(json.dumps({'fingerprint':fingerprint,'observed':observed,'git':commit,'events':events,'snapshot_at':report['snapshot_at']}))
+ (STATE/'state.json').write_text(json.dumps({'fingerprint':fingerprint,'observed':observed,'git':commit,'registry_seen':registry_seen,'events':events,'snapshot_at':report['snapshot_at']}))
  return changed
 
 def publish():
