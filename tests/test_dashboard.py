@@ -35,6 +35,11 @@ with sync_playwright() as p:
  page.locator('#landscape-search').fill('LambdaRank')
  assert page.locator('#landscape-counts tr').count()==1
  assert 'niet promoveren' in page.locator('#landscape-result').inner_text()
+ page.get_by_role('button',name='08 Experimenten en submissies').click()
+ page.locator('#plan-experiments article').first.wait_for()
+ assert page.locator('#plan-experiments article').count()==7
+ assert page.locator('#plan-submissions tr').count()==4
+ assert page.locator('#plan-calendar tr').count()==12
  page.get_by_role('button',name='01 Proces en lineage').click()
  page.locator('[data-select="LOG-01"]').first.click()
  assert 'casmi26-research-observatory/blob/main/tools/log_event.py' in page.locator('#detail a').first.get_attribute('href')

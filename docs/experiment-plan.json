@@ -1,0 +1,262 @@
+{
+  "plan_id": "HYBRID-12D-20261123-v1",
+  "original_period": {
+    "start": "2026-11-22",
+    "end": "2026-12-03"
+  },
+  "amended_on": "2026-11-23",
+  "status": "preregistered_design_not_completed_evidence",
+  "purpose": "Measure whether hybrid distillation and conditional computation improve independent identification quality, efficiency or both.",
+  "gates": {
+    "quality": {
+      "paired_MRR_delta_point_min": 0.005,
+      "paired_MRR_95_lower_gt": 0,
+      "top1_delta_95_lower_min": -0.005,
+      "stress_MRR_delta_95_lower_min": -0.005,
+      "protected_class_delta_point_min": -0.01
+    },
+    "efficiency": {
+      "end_to_end_speedup_point_min": 1.5,
+      "MRR_delta_95_lower_min": -0.005,
+      "top1_delta_95_lower_min": -0.005,
+      "stress_MRR_delta_95_lower_min": -0.005,
+      "same_hardware_repetitions": 5
+    },
+    "confirmation": "Frozen untouched identities and scaffolds, upstream exposure checked. Reused/leaky DEV cannot authorize promotion. Insufficient precision means inconclusive. Familywise adaptive exploration remains exploratory until one frozen confirmation."
+  },
+  "experiments": [
+    {
+      "id": "HX-00",
+      "component": "VAL-01",
+      "name": "Herstel en bevries de vergelijkingsbasis",
+      "mechanism": "Validiteitscontrole",
+      "arms": [
+        "legacy diagnostic panel",
+        "corrected identity/scaffold/source manifest"
+      ],
+      "fixed_design": "Remove truth-row-derived catalogue metadata from novel tracks; do not remove hard queries. Keep recognition, new identities and new scaffolds separate. Validate all upstream training and checkpoint selection exposures.",
+      "platform": "Kaggle CPU checks; Colab for GPU checkpoint parity",
+      "status": "required_gate",
+      "primary": "eligibility and paired baseline reproducibility",
+      "submission": "none"
+    },
+    {
+      "id": "HX-01",
+      "component": "ML-01",
+      "name": "Neurale student vervangt LambdaRank",
+      "mechanism": "Distillatie en lagere scoringskosten",
+      "arms": [
+        "frozen LambdaRank B",
+        "MLP64/32 student-only"
+      ],
+      "fixed_design": "Twofold identity-excluded teacher targets on TRAIN; fixed 8 epochs. Freeze trained student before confirmation. No teacher predictions on its own training identities. Same candidate/features initially; report feature costs separately.",
+      "platform": "Colab T4 training; Kaggle offline functional parity",
+      "status": "diagnostic_queued_on_Kaggle_separate_from_confirmation",
+      "primary": "efficiency gate; quality superiority separately",
+      "submission": "S-A"
+    },
+    {
+      "id": "HX-02",
+      "component": "ML-02",
+      "name": "Vaste teacher-studentcombinatie",
+      "mechanism": "Aanvullende fouten",
+      "arms": [
+        "B",
+        "student-only",
+        "fixed .8 baseline + .2 student after declared normalization"
+      ],
+      "fixed_design": "No blend-weight search after DEV results. Report discordant wins/losses and residual covariance on fixed context strata, not score correlation alone.",
+      "platform": "Colab T4 development; Kaggle parity",
+      "status": "designed",
+      "primary": "quality gate plus incremental cost",
+      "submission": "S-B"
+    },
+    {
+      "id": "HX-03",
+      "component": "POL-01",
+      "name": "Goedkope route met specialist op aanvraag",
+      "mechanism": "Conditionele berekening",
+      "arms": [
+        "always full B",
+        "always cheap student",
+        "frozen query-time router"
+      ],
+      "fixed_design": "Fit and calibrate on separate TRAIN/calibration identities. Router sees only features computed before route selection. Choose one threshold on calibration against preregistered quality/cost loss, then lock. Compare actual cold/warm p50/p95 and candidate-generation costs.",
+      "platform": "Colab T4 development and repeated same-device latency; Kaggle end-to-end offline",
+      "status": "designed",
+      "primary": "efficiency gate and risk-coverage",
+      "submission": "S-C"
+    },
+    {
+      "id": "HX-04",
+      "component": "ML-01",
+      "name": "Compact spectrum-CNN als student",
+      "mechanism": "Goedkope directe spectrale representatie",
+      "arms": [
+        "same frozen target features through MLP",
+        "fixed small 1D CNN on documented m/z bins with precursor/adduct channels"
+      ],
+      "fixed_design": "Two architecture arms only. No CNN over arbitrarily ordered feature columns. Use genuine energy-indexed sequence branch only if measured ordered energies exist; otherwise no RNN claim. Keep acquisition preprocessing and all identities fixed.",
+      "platform": "Colab T4; fixed training-time budget before run",
+      "status": "conditional_on_HX01_and_data_contract",
+      "primary": "quality and cost vs MLP; fingerprintRMSE only if fingerprint head trained",
+      "submission": "S-D if selected before confirmation"
+    },
+    {
+      "id": "HX-05",
+      "component": "VAL-01",
+      "name": "CASMI2022 met en zonder LLM",
+      "mechanism": "Chemische foutcorrectie versus geheugen",
+      "arms": [
+        "frozen model",
+        "same candidate set + frozen offline LLM reranker",
+        "historical submitted top1"
+      ],
+      "fixed_design": "Priority/bonus separate; exclude81/282/432/476; historical first-block top1 primary. No answer keys/challengeIDs/names in inference. Audit identity/spectral/LLM exposure; same candidate set and tool budget. Fixed prompt/checkpoint/decoding, invalid output fallback. Both all-valid and joint-attempted denominators.",
+      "platform": "Colab T4 exclusively for historical GPU runs",
+      "status": "notebook_uploaded_not_executed_missing_adapter_and_model",
+      "primary": "paired top1 and historical task score; MRR25 supplementary",
+      "submission": "historical benchmark artifact only; no Kaggle2026 slot"
+    },
+    {
+      "id": "HX-06",
+      "component": "ML-02",
+      "name": "Echte aanvulling met voorwaartse fragmentatie",
+      "mechanism": "Orthogonale chemische evidentie",
+      "arms": [
+        "B",
+        "B plus one approved forward channel or LLM chemical feature"
+      ],
+      "fixed_design": "Select at most one source/checkpoint before confirmation using clean development data. Same candidates; enforce elemental/mass checks; cap per-query expensive budget. No hosted API in offline rerun; no unknown-source teacher output silently treated as allowed data.",
+      "platform": "Colab T4; Kaggle final compatibility",
+      "status": "conditional_on_source_eligibility_and_adapter",
+      "primary": "quality gate; report corrected and damaged predictions",
+      "submission": "S-D alternative to HX04, not another confirmation peek"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "S-A",
+      "experiment": "HX-01",
+      "earliest": "2026-11-26",
+      "claim": "Student can preserve quality with lower end-to-end cost; leaderboard alone does not measure speed.",
+      "required": "efficiency confirmation, complete offline parity and valid 400-query output",
+      "prediction": "freeze directional expectation, uncertainty rationale and exact artifact before submission; no numerical forecast invented from biased DEV"
+    },
+    {
+      "id": "S-B",
+      "experiment": "HX-02",
+      "earliest": "2026-11-28",
+      "claim": "Neural complement adds rank quality to frozen B.",
+      "required": "independent quality gate and fixed .8/.2 variant; if no gain skip slot",
+      "prediction": "public_MRR25 delta versus fixed B recorded separately from independent effect"
+    },
+    {
+      "id": "S-C",
+      "experiment": "HX-03",
+      "earliest": "2026-12-01",
+      "claim": "Adaptive route retains quality at reduced measured cost.",
+      "required": "independent efficiency gate, same-device latency, all source and runtime checks",
+      "prediction": "noninferiority on public score plus external latency evidence; no causal speed claim from public score"
+    },
+    {
+      "id": "S-D",
+      "experiment": "HX-04 or HX-06",
+      "earliest": "2026-12-03",
+      "claim": "One preregistered specialist improves the final end-to-end identification pipeline.",
+      "required": "choose finalist on DEV, then one independent confirmation; approved offline assets and full rerun",
+      "prediction": "artifact and expected direction frozen before slot; uncertainty included"
+    }
+  ],
+  "calendar": [
+    {
+      "day": 1,
+      "date": "2026-11-22",
+      "work": "Historical baseline/score evidence archived; no retrospective new experiment claim."
+    },
+    {
+      "day": 2,
+      "date": "2026-11-23",
+      "work": "HX00 exposure/metadata repair plan; fixed ensemble rejection recorded; student diagnostic queued; historical Colab prepared."
+    },
+    {
+      "day": 3,
+      "date": "2026-11-24",
+      "work": "Complete HX00 and matched baseline; collect HX01 OOF teachers and Colab student run if runtime available."
+    },
+    {
+      "day": 4,
+      "date": "2026-11-25",
+      "work": "HX01 and HX02 clean DEV + stress diagnostics; lock one student artifact; no weights grid."
+    },
+    {
+      "day": 5,
+      "date": "2026-11-26",
+      "work": "Independent HX01 confirmation on reserved panel A; same-device latency; S-A only if efficiency gate passes."
+    },
+    {
+      "day": 6,
+      "date": "2026-11-27",
+      "work": "HX02 error complementarity and locked confirmation on distinct panel B; HX05 metadata/ingestion on Colab."
+    },
+    {
+      "day": 7,
+      "date": "2026-11-28",
+      "work": "S-B if quality gate passed; train/calibrate HX03 on development data; optional fixed CNN arm if resources allow."
+    },
+    {
+      "day": 8,
+      "date": "2026-11-29",
+      "work": "Lock router; evaluate end-to-end on fresh panel C; run HX05 baseline and LLM when adapters/checkpoints ready."
+    },
+    {
+      "day": 9,
+      "date": "2026-11-30",
+      "work": "HX03 stress and latency repeats; HX04 or HX06 development choice, source/exposure audit; freeze one specialist."
+    },
+    {
+      "day": 10,
+      "date": "2026-12-01",
+      "work": "S-C if efficiency gate passed; one specialist confirmation on reserved panel D; report CASMI22 historical comparison separately."
+    },
+    {
+      "day": 11,
+      "date": "2026-12-02",
+      "work": "Offline full 400-query reruns; identical output and metric keys across Colab/Kaggle, memory/runtime/fallback checks; assemble factorial attribution."
+    },
+    {
+      "day": 12,
+      "date": "2026-12-03",
+      "work": "S-D if frozen specialist passes; final evidence report including failed/inconclusive experiments. Preserve two final candidates for final deadline."
+    }
+  ],
+  "stop_rules": [
+    "If HX00 not passed, all model scores remain exploratory and confirmation/submission claim blocked.",
+    "If Colab unavailable record pending, do not relabel prepared as running; reschedule within remaining dates without collapsing validation.",
+    "No fresh identities after exposure: used confirmation cannot be renamed fresh.",
+    "If precision inadequate report inconclusive; do not widen margins after result.",
+    "A rejected extra objective does not justify a grid of leaderboard weights.",
+    "Retrospective CASMI22 improvement does not prove superiority to all participants or predict CASMI26 private score."
+  ],
+  "resource_budgets": {
+    "preferred_training": "Colab T4; record actual account/runtime availability, never presume quota renewal",
+    "initial_GPU_budget_minutes": 240,
+    "per_arm_caps_minutes": {
+      "HX-01": 40,
+      "HX-02": 10,
+      "HX-03": 20,
+      "HX-04": 60,
+      "HX-05": 60,
+      "HX-06": 50
+    },
+    "budget_semantics": "At most 240 allocated minutes across arms; caps are ceilings, not additive reservations. Queue checks and CPU evaluations do not imply GPU use. Extend only if a preregistered useful arm needs it, with a new allocation record.",
+    "concurrency": "Coordinate bus; at most two development GPU runs simultaneously, one model choice per experiment family before confirmation. Respect provider quotas.",
+    "Kaggle": "Short compatibility and official offline reruns; historical GPU validation on Colab."
+  },
+  "latest_panel_repair_note": {
+    "observed": "2026-11-23",
+    "source": "Claude agentbus187",
+    "detail": "analyze_t2u.py corr mode removes novel truth own doc prior and COCONUT flag. p0 interim exploratory corrected delta smaller than raw; do not treat retrospective calibration match as independent confirmation.",
+    "required_action": "Port corrected semantics to all new development and confirmation arms; hash panel generator and assert no truth-derived metadata before scoring."
+  }
+}
