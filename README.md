@@ -22,3 +22,7 @@ Components UI-01, LOG-01, GIT-01 and LIN-01 cover the observatory itself. All ID
 `uv run --no-project --with playwright python tests/test_dashboard.py` checks browser behavior in a separate headless Chrome. The checked score is the initial reviewed fixture; update that assertion deliberately when a new official snapshot changes it. `docs/qa.json` records the completed UI checks; it does not certify the scientific validity of the results.
 
 The local macOS LaunchAgent `nl.ehmac.casmi-observatory` keeps the watcher running during the logged-in session. Stop with `launchctl bootout gui/$(id -u)/nl.ehmac.casmi-observatory`. Restart with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/nl.ehmac.casmi-observatory.plist`. No credentials are stored in this project; publishing uses existing Git authentication.
+
+## Visual datamodel
+
+The Datamodel view displays an interactive Mermaid overview and the full ER model, with zoom, fit, fullscreen, keyboard navigation, entity-to-component links, SVG download and the original `.mmd` sources. SVG files are pre-rendered with pinned Mermaid 11.12.0, so page visitors do not need a CDN script. Rebuild with `uv run --no-project --with playwright python tools/render_diagrams.py` (build-time CDN access required). Mermaid syntax follows https://mermaid.js.org/syntax/entityRelationshipDiagram.html and https://mermaid.js.org/config/usage.html. The diagram represents the logical model, not an already enforced central relational database.

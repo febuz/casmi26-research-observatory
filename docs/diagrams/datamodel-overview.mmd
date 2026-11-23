@@ -1,0 +1,21 @@
+flowchart TB
+ SRC["SRC-01 · Bronnen en assets<br/>SourceVersion · Asset · DatasetVersion"] --> SPC["SPC-01 · Chemische meting<br/>Identity · Spectrum · Query"]
+ SRC --> LIN["LIN-01 · Transformatielineage<br/>TransformVersion · Execution · AssetUsage"]
+ SPC --> TRF["TRF-01 · Curatie en ionvorm<br/>Versiebeheerde bewerking"]
+ TRF --> CAT["CAT-01 · Kandidaten<br/>CandidateSet · Origin"]
+ CAT --> ML["ML-01 / ML-02 · Machine learning<br/>ModelVersion · Ensemble · Prediction"]
+ LIN -. "inputs en outputs" .-> CAT
+ LIN -. "code en run" .-> ML
+ ML --> VAL["VAL-01 · Evaluatie<br/>Panel · MetricValue · EffectComparison"]
+ VAL --> SUB["SUB-01 · Officieel bewijs<br/>SubmissionScore · ClaimEvidence"]
+ GOV["GOV-01 · Governance<br/>SourceReview · Exposure · Eligibility"] -. "bronrechten" .-> SRC
+ GOV -. "geschiktheid" .-> VAL
+ GIT["GIT-01 / LOG-01 · Reproduceerbaarheid<br/>Commit · Run · ProcessEvent · Issue"] -. "versie en uitvoer" .-> LIN
+ VAL -. "leren van routewinst" .-> POL["POL-01 · Contextueel beleid<br/>Actie · Beloning · Beleidsversie"]
+ POL -. "routekeuze" .-> ML
+ classDef data fill:#193148,stroke:#85b9ff,color:#edf2fb
+ classDef model fill:#1a3b36,stroke:#60dfaf,color:#edf2fb
+ classDef control fill:#3b3220,stroke:#f4ce7a,color:#edf2fb
+ class SRC,SPC,TRF,CAT,LIN data
+ class ML,VAL,SUB,POL model
+ class GOV,GIT control

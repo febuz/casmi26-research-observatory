@@ -1,0 +1,104 @@
+erDiagram
+ SOURCE_VERSION ||--o{ ASSET : levert
+ DATASET_VERSION ||--o{ DATASET_ASSET : bevat
+ ASSET ||--o{ DATASET_ASSET : behoort_tot
+ SOURCE_VERSION ||--o{ SOURCE_REVIEW : beoordeeld_door
+ MOLECULAR_IDENTITY o|--o{ SPECTRUM : identificeert
+ DATASET_VERSION ||--o{ SPECTRUM : bevat
+ QUERY ||--|{ QUERY_SPECTRUM : groepeert
+ SPECTRUM ||--o{ QUERY_SPECTRUM : gebruikt_in
+ CODE_COMMIT ||--o{ TRANSFORM_VERSION : definieert
+ TRANSFORM_VERSION ||--o{ TRANSFORM_EXECUTION : uitgevoerd_als
+ RUN ||--o{ TRANSFORM_EXECUTION : registreert
+ TRANSFORM_EXECUTION ||--|{ ASSET_USAGE : gebruikt_of_produceert
+ ASSET ||--o{ ASSET_USAGE : betrokken_bij
+ DATASET_VERSION ||--o{ MODEL_DATASET : gebruikt_voor
+ MODEL_VERSION ||--o{ MODEL_DATASET : training_of_selectie
+ MODEL_VERSION ||--o{ ENSEMBLE_MEMBER : lid_van
+ ENSEMBLE_VERSION ||--|{ ENSEMBLE_MEMBER : combineert
+ QUERY ||--o{ CANDIDATE_SET : krijgt
+ CANDIDATE_SET ||--o{ CANDIDATE : bevat
+ MOLECULAR_IDENTITY ||--o{ CANDIDATE : vertegenwoordigd_door
+ CANDIDATE ||--|{ CANDIDATE_ORIGIN : herleidbaar_via
+ ASSET ||--o{ CANDIDATE_ORIGIN : bron_van
+ RUN ||--o{ PREDICTION : produceert
+ ENSEMBLE_VERSION ||--o{ PREDICTION : berekent
+ CANDIDATE ||--o{ PREDICTION : krijgt_score
+ PANEL_VERSION ||--|{ PANEL_MEMBER : bevat
+ MOLECULAR_IDENTITY ||--o{ PANEL_MEMBER : opgenomen_in
+ MOLECULAR_IDENTITY ||--o{ EXPOSURE_EVENT : blootstelling
+ MODEL_VERSION ||--o{ EXPOSURE_EVENT : betreft
+ MODEL_VERSION ||--o{ ELIGIBILITY_REVIEW : beoordeeld
+ PANEL_VERSION ||--o{ ELIGIBILITY_REVIEW : geldt_voor
+ RUN ||--o{ EVALUATION : gemeten_in
+ PANEL_VERSION ||--o{ EVALUATION : gebruikt
+ EVALUATION ||--o{ METRIC_VALUE : rapporteert
+ METRIC_DEFINITION ||--o{ METRIC_VALUE : definieert
+ EVALUATION ||--o{ EFFECT_COMPARISON : baseline_of_kandidaat
+ TRANSFORM_VERSION ||--o{ EFFECT_COMPARISON : onderzoekt
+ EFFECT_COMPARISON ||--o{ CLAIM_EVIDENCE : ondersteunt
+ METRIC_VALUE ||--o{ CLAIM_EVIDENCE : onderbouwt
+ CLAIM ||--|{ CLAIM_EVIDENCE : verwijst_naar
+ RUN ||--o{ SUBMISSION : ingediend_als
+ SUBMISSION ||--o{ SUBMISSION_SCORE : ontvangt
+ SUBMISSION_SCORE ||--o{ CLAIM_EVIDENCE : ondersteunt
+ COMPONENT ||--o{ PROCESS_EVENT : logt
+ RUN o|--o{ PROCESS_EVENT : betreft
+ CODE_COMMIT ||--o{ PROCESS_EVENT : vastgelegd_bij
+ COMPONENT ||--o{ GITHUB_ISSUE : bespreekt
+ ASSET {
+  string asset_id PK
+  string sha256
+  string storage_uri
+ }
+ TRANSFORM_EXECUTION {
+  string execution_id PK
+  string transform_version_id FK
+  string run_id FK
+  string config_hash
+ }
+ ASSET_USAGE {
+  string execution_id FK
+  string asset_id FK
+  string role "input of output"
+ }
+ MODEL_DATASET {
+  string model_version_id FK
+  string dataset_version_id FK
+  string purpose "training of selectie"
+ }
+ METRIC_VALUE {
+  string metric_value_id PK
+  float value "nullable"
+  string missing_reason
+  int sample_size
+  string evaluation_scope
+ }
+ EFFECT_COMPARISON {
+  string comparison_id PK
+  string baseline_evaluation_id FK
+  string candidate_evaluation_id FK
+  float delta
+  float confidence_lower "nullable"
+  float confidence_upper "nullable"
+  string attribution_status
+ }
+ ELIGIBILITY_REVIEW {
+  string model_version_id FK
+  string panel_version_id FK
+  string status
+  string exclusion_reason
+ }
+ PROCESS_EVENT {
+  string event_id PK
+  string component_id FK
+  string run_id FK "nullable"
+  string commit_sha FK
+  datetime observed_at
+  string event_type
+ }
+ GITHUB_ISSUE {
+  int issue_number PK
+  string component_id FK
+  string issue_url
+ }
