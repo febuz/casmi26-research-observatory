@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-23T13:21:18.386681+00:00",
+  "snapshot_at": "2026-11-23T13:26:22.585974+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
   "components": [
@@ -349,6 +349,70 @@
     {
       "time": "2026-11-23T13:21:18.386606+00:00",
       "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "0f8971b5-bca7-409a-8aee-ff8e3d01791c",
+      "time": "2026-11-23T13:26:13.341626+00:00",
+      "type": "run_blocked",
+      "component_ids": [
+        "ML-01"
+      ],
+      "commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
+      "run_id": "neural-distillation-20261123-v1",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: blocked. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "event_id": "a7329383-28fb-46df-b887-86327d290f8e",
+      "time": "2026-11-23T13:26:13.461727+00:00",
+      "type": "run_blocked",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
+      "run_id": "casmi22-historical-colab-20261123-v1",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: blocked. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "event_id": "registry-07f74a3eb87d440d789a5e2adbceb58a2e52f4cff3c4cb9a85df067b110f50b1",
+      "time": "2026-11-23T13:26:22.585605+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
+      "run_id": "casmi22-historical-colab-20261123-v1",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-23f3ffd3d723cbef2454a9fb0b2baae8c5f74d91a04dce973847836e360388a8",
+      "time": "2026-11-23T13:26:22.585659+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
+      "run_id": "neural-distillation-20261123-v1",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-23T13:26:22.585924+00:00",
+      "type": "event_stream_updated",
       "component_ids": [],
       "commit": "e6d6ba6e75cbabb13f889e45ae90cedb76cba4a4",
       "hashes": {
