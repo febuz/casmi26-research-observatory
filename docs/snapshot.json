@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-23T12:34:46.438257+00:00",
+  "snapshot_at": "2026-11-23T13:17:11.827979+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
   "components": [
@@ -260,6 +260,44 @@
     },
     {
       "time": "2026-11-23T12:34:46.438143+00:00",
+      "type": "event_stream_updated",
+      "component_ids": [],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "d5d06a09-9db5-4882-b22a-4d2f0ccc09a1",
+      "time": "2026-11-23T13:17:02.232060+00:00",
+      "type": "run_started",
+      "component_ids": [
+        "ML-02"
+      ],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "run_id": "objective-ensemble-20261123-v1",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: started. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "event_id": "registry-001ada865ad7c620b36b1f0016a9e8a2b6d5a45870eb4dcb37eb87022c74ac56",
+      "time": "2026-11-23T13:17:11.827748+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "run_id": "objective-ensemble-20261123-v1",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-23T13:17:11.827951+00:00",
       "type": "event_stream_updated",
       "component_ids": [],
       "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
