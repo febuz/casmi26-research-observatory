@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-23T20:53:09.127886+00:00",
+  "snapshot_at": "2026-11-23T20:57:17.835848+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
   "components": [
@@ -1112,6 +1112,30 @@
     },
     {
       "time": "2026-11-23T20:53:09.127526+00:00",
+      "type": "event_stream_updated",
+      "component_ids": [],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-e089ac4cc0dc6a0659af574b93887c7e2f88152f44c564b87a166af0be41eb4d",
+      "time": "2026-11-23T20:57:17.835302+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "run_id": "2026-11-23.framework.spark.v2",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-23T20:57:17.835766+00:00",
       "type": "event_stream_updated",
       "component_ids": [],
       "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
