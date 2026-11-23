@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-23T17:20:18.820732+00:00",
+  "snapshot_at": "2026-11-23T17:21:21.562184+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "792aa9aae458ceea6d77a5e430771329af19b4ad",
   "components": [
@@ -623,6 +623,32 @@
     {
       "time": "2026-11-23T17:20:18.820462+00:00",
       "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "792aa9aae458ceea6d77a5e430771329af19b4ad",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "32b3da8c-0af0-49e2-b48d-cfd09c191d6b",
+      "time": "2026-11-23T17:20:40.827473+00:00",
+      "type": "run_completed",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "792aa9aae458ceea6d77a5e430771329af19b4ad",
+      "run_id": "hx01-corrected-preflight-v1",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: completed. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "time": "2026-11-23T17:21:21.562109+00:00",
+      "type": "event_stream_updated",
       "component_ids": [],
       "commit": "792aa9aae458ceea6d77a5e430771329af19b4ad",
       "hashes": {
