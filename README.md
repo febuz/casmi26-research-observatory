@@ -9,3 +9,10 @@ Serve `docs/` with a local HTTP server or GitHub Pages. `tools/sync.py` exports 
 Git selectors inspect historical `VERSIONS.json` snapshots. They do not checkout the source worktree. Full code comparisons require access to the separate private source repository.
 
 Local state is ignored. Public snapshot fields are reviewed in `tools/sync.py`; do not replace them with arbitrary logs. New experiments must be added deliberately to this allowlist. GitHub Pages publication can lag a local change. The snapshot timestamp identifies the actual exported state.
+
+## Structured process events
+
+Example: `python tools/log_event.py --component ML-01 --run-id encoder-run-20261123 --status started`.
+Finish with `--status completed --metric dev_mrr25 --value 0.3 --baseline 0.29` only when that metric has actually been measured. Metric type explicitly preserves evaluation scope. This logger does not certify the measurement. Raw messages and free-form process output are deliberately not published. The observer watches selected evidence files; it does not automatically instrument every existing training process. Producers must call the event logger to record run lifecycles.
+
+Components UI-01, LOG-01, GIT-01 and LIN-01 cover the observatory itself. All IDs have deep links and prefilled issues. Source components point to the private research repository; UI/logging sources point to this public repository.

@@ -9,6 +9,10 @@ def now():return datetime.now(timezone.utc).isoformat()
 def git(*args):return subprocess.check_output(['git','-C',str(SRC),*args],text=True).strip()
 def read(p):return json.loads((SRC/p).read_text())
 COMPONENTS=[
+ ('UI-01','Interactief dashboard','governance','Component · Issue · View','Publieke weergave behoudt meetbereik en ontbrekende waarden.','docs/index.html'),
+ ('LOG-01','Proceslogs en publicatie','governance','RunEvent · Snapshot · Deployment','Runmeldingen onderscheiden van waargenomen bestandswijzigingen.','tools/log_event.py'),
+ ('GIT-01','Git-versievergelijking','governance','CodeCommit · RegistrySnapshot','Versiekeuze leest alleen; wijzigt de onderzoekswerkmap niet.','tools/sync.py'),
+ ('LIN-01','Transformatielineage','evidence','TransformExecution · EffectComparison','Bronnen, bewerkingen en effectclaims afzonderlijk koppelen.','reports/transformation_lineage_20261123/lineage.json'),
  ('SRC-01','Bronnen en catalogi','data','SourceVersion · DatasetVersion · Asset','Bronrechten, NIST-herkomst en versies afzonderlijk beoordelen.','experiments/final_notebook/source_registry.json'),
  ('SPC-01','Spectra en query','data','MolecularIdentity · Spectrum · Query','Ruwe pieken behouden; identiteit niet uit voorspelling invullen.','docs/monografie_20261119/hoofdstukken/102_datamodel_en_datagovernance.md'),
  ('TRF-01','Piekcuratie en ionvorm','transform','TransformVersion · TransformExecution','Parserfouten en niet-ondersteunde adducts expliciet loggen.','experiments/final_notebook/casmi_final.py'),
@@ -25,13 +29,18 @@ def build():
  observed={}
  for label,path in [('lineage','reports/transformation_lineage_20261123/lineage.json'),('policy','reports/context_policy_20261123/out/context_policy.json'),('source_guard','experiments/final_notebook/source_registry.json')]:
   observed[label]=hashlib.sha256((SRC/path).read_bytes()).hexdigest()
- payload={'observed':observed,'git':commit}
+ local_events=STATE/'process_events.jsonl'
+ new_events=[json.loads(x) for x in local_events.read_text().splitlines() if x.strip()] if local_events.exists() else []
+ payload={'observed':observed,'git':commit,'event_ids':[e['event_id'] for e in new_events]}
  fingerprint=hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()
  events=previous.get('events',[])
  if previous.get('fingerprint')!=fingerprint:
   changed=[k for k,v in observed.items() if previous.get('observed',{}).get(k)!=v]
-  event={'time':now(),'type':'baseline_registered' if not events else 'artifact_change_observed','component_ids':(['SUB-01'] if 'lineage' in changed else [])+(['POL-01','VAL-01'] if 'policy' in changed else [])+(['GOV-01'] if 'source_guard' in changed else []),'commit':commit,'hashes':observed,'message':'Momentopname geregistreerd; dit is geen nieuw trainingsresultaat.' if not events else 'Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken.'}
+  event={'time':now(),'type':'baseline_registered' if not events else ('artifact_change_observed' if changed or previous.get('git')!=commit else 'event_stream_updated'),'component_ids':(['SUB-01'] if 'lineage' in changed else [])+(['POL-01','VAL-01'] if 'policy' in changed else [])+(['GOV-01'] if 'source_guard' in changed else []),'commit':commit,'hashes':observed,'message':'Momentopname geregistreerd; dit is geen nieuw trainingsresultaat.' if not events else 'Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken.'}
   events.append(event)
+ known={e.get('event_id') for e in events}
+ events.extend(e for e in new_events if e['event_id'] not in known)
+ events.sort(key=lambda e:e['time'])
  components=[dict(id=i,name=n,kind=k,entities=e,rule=r,code_path=p) for i,n,k,e,r,p in COMPONENTS]
  versions=[{'id':v,'mrr':r['public_mrr25'],'reference':r['official_reference']} for v,r in line['versions'].items()]
  trans=[{'id':x['transformation_id'],'baseline':x['baseline'],'candidate':x['candidate'],'delta':x['delta'],'kernel':x['kernel'],'kernel_version':x['kernel_version'],'receipt_sha256':x['receipt_sha256'],'operation':x['operation'],'causal_status':x['causal_status']} for x in line['transformations']]
@@ -48,7 +57,7 @@ def build():
  encoded=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
  target=ROOT/'docs/snapshot.json';changed=not target.exists() or target.read_text()!=encoded
  target.write_text(encoded)
- (STATE/'state.json').write_text(json.dumps({'fingerprint':fingerprint,'observed':observed,'events':events,'snapshot_at':report['snapshot_at']}))
+ (STATE/'state.json').write_text(json.dumps({'fingerprint':fingerprint,'observed':observed,'git':commit,'events':events,'snapshot_at':report['snapshot_at']}))
  return changed
 
 def publish():

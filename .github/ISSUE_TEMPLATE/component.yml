@@ -1,0 +1,28 @@
+name: Onderdeel onderzoeken
+description: Koppel een probleem of verbetering aan een vaste component-ID.
+title: "[COMPONENT-ID] "
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component-ID
+      placeholder: Bijvoorbeeld CAT-01 of TR-V12
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit of notebookversie
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Waarneming en verwachte uitkomst
+      description: Geen tokens, privédata of verborgen testlabels toevoegen.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Baseline, metriek, evaluatiebereik en reproductie

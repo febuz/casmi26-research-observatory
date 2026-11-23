@@ -1,8 +1,40 @@
 {
-  "snapshot_at": "2026-11-23T12:31:47.580133+00:00",
+  "snapshot_at": "2026-11-23T12:34:22.871728+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
   "components": [
+    {
+      "id": "UI-01",
+      "name": "Interactief dashboard",
+      "kind": "governance",
+      "entities": "Component · Issue · View",
+      "rule": "Publieke weergave behoudt meetbereik en ontbrekende waarden.",
+      "code_path": "docs/index.html"
+    },
+    {
+      "id": "LOG-01",
+      "name": "Proceslogs en publicatie",
+      "kind": "governance",
+      "entities": "RunEvent · Snapshot · Deployment",
+      "rule": "Runmeldingen onderscheiden van waargenomen bestandswijzigingen.",
+      "code_path": "tools/log_event.py"
+    },
+    {
+      "id": "GIT-01",
+      "name": "Git-versievergelijking",
+      "kind": "governance",
+      "entities": "CodeCommit · RegistrySnapshot",
+      "rule": "Versiekeuze leest alleen; wijzigt de onderzoekswerkmap niet.",
+      "code_path": "tools/sync.py"
+    },
+    {
+      "id": "LIN-01",
+      "name": "Transformatielineage",
+      "kind": "evidence",
+      "entities": "TransformExecution · EffectComparison",
+      "rule": "Bronnen, bewerkingen en effectclaims afzonderlijk koppelen.",
+      "code_path": "reports/transformation_lineage_20261123/lineage.json"
+    },
     {
       "id": "SRC-01",
       "name": "Bronnen en catalogi",
@@ -187,6 +219,44 @@
         "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
       },
       "message": "Momentopname geregistreerd; dit is geen nieuw trainingsresultaat."
+    },
+    {
+      "time": "2026-11-23T12:34:22.434508+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "340a66fd-7e23-45e6-b579-4b8d02a25fcd",
+      "time": "2026-11-23T12:34:22.779835+00:00",
+      "type": "run_completed",
+      "component_ids": [
+        "UI-01"
+      ],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "run_id": "observatory-browser-qa-v1",
+      "metric": null,
+      "value": null,
+      "baseline": null,
+      "message": "Gestructureerde runmelding: completed. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
+    },
+    {
+      "time": "2026-11-23T12:34:22.871613+00:00",
+      "type": "event_stream_updated",
+      "component_ids": [],
+      "commit": "4c6eb5ebb49a83d77d5c65b30bd2f2de7362dae6",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
   ],
   "glossary": [
