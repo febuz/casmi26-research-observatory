@@ -25,7 +25,7 @@ with sync_playwright() as p:
  assert 'LIN-01' in page.locator('#detail').inner_text()
  page.locator('#zoom-fit').click()
  page.get_by_role('button',name='06 Begrippen').click()
- page.locator('#search').fill('BG001');assert page.locator('.term').count()==1
+ page.locator('#search').fill('BG001');assert page.locator('#terms .term').count()==1
  page.get_by_role('button',name='05 Proceslogs en Git').click()
  assert 'observatory-browser-qa-v1' in page.locator('#events').inner_text()
  page.locator('#gitB').select_option(index=2);assert '...' in page.locator('#compare').get_attribute('href')
