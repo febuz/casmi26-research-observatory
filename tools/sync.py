@@ -46,13 +46,13 @@ def build():
   except (subprocess.CalledProcessError,json.JSONDecodeError):continue
  report['git_snapshots']=history
  encoded=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
- target=ROOT/'site/snapshot.json';changed=not target.exists() or target.read_text()!=encoded
+ target=ROOT/'docs/snapshot.json';changed=not target.exists() or target.read_text()!=encoded
  target.write_text(encoded)
  (STATE/'state.json').write_text(json.dumps({'fingerprint':fingerprint,'observed':observed,'events':events,'snapshot_at':report['snapshot_at']}))
  return changed
 
 def publish():
- subprocess.run(['git','-C',str(ROOT),'add','site/snapshot.json'],check=True)
+ subprocess.run(['git','-C',str(ROOT),'add','docs/snapshot.json'],check=True)
  if subprocess.run(['git','-C',str(ROOT),'diff','--cached','--quiet']).returncode:
   subprocess.run(['git','-C',str(ROOT),'commit','-m','Update observed research evidence snapshot'],check=True)
   subprocess.run(['git','-C',str(ROOT),'push','origin','main'],check=True)
