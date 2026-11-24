@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-23T21:51:47.787253+00:00",
+  "snapshot_at": "2026-11-24T00:04:54.913960+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
   "components": [
@@ -1275,6 +1275,20 @@
         "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
         "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
         "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "time": "2026-11-24T00:04:54.913802+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [
+        "GOV-01"
+      ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "b33a9e241c8377ae0cf754917c647b96c851d815d9684040f46f5a4ef2e2ae3e"
       },
       "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
