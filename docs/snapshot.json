@@ -1,7 +1,7 @@
 {
-  "snapshot_at": "2026-11-24T07:48:47.519574+00:00",
+  "snapshot_at": "2026-11-24T16:07:35.838170+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
-  "code_commit": "949fb054005c8cb585b9cdf75332ee9ab92fd87a",
+  "code_commit": "d05ab0ca867ad609869fe2110666ba9261c3a183",
   "components": [
     {
       "id": "UI-01",
@@ -203,34 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "event_id": "9cbf4c06-4c74-4a2c-b203-d94d7fdd42ce",
-      "time": "2026-11-23T14:11:46.942692+00:00",
-      "type": "run_started",
-      "component_ids": [
-        "VAL-01"
-      ],
-      "commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
-      "run_id": "hx00-corrected-panel-contract",
-      "metric": null,
-      "value": null,
-      "baseline": null,
-      "message": "Gestructureerde runmelding: started. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
-    },
-    {
-      "event_id": "6bb35043-27c3-400b-a5a8-67a23fedc2cf",
-      "time": "2026-11-23T14:11:46.983662+00:00",
-      "type": "run_started",
-      "component_ids": [
-        "VAL-01"
-      ],
-      "commit": "2df1500a40623a230f2df167527c8a02db78d7f7",
-      "run_id": "fpnet-foldsafe-v5-explicit-exclusion",
-      "metric": null,
-      "value": null,
-      "baseline": null,
-      "message": "Gestructureerde runmelding: started. Resultaatbereik volgt uit het metriekveld; dit is geen onafhankelijke review."
-    },
     {
       "event_id": "426f0a92-fb76-4468-96bc-3a3ac75955e4",
       "time": "2026-11-23T14:11:47.024348+00:00",
@@ -1422,6 +1394,30 @@
         "source_guard": "9e2b917d4e2dfefc42d92e580368a4b05f3aceb296f1a8d4473479728b890c06"
       },
       "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-28083fd9415196396c726c82b66b67832705e32a020e9cf725055deee6441c79",
+      "time": "2026-11-24T16:07:35.837748+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "d05ab0ca867ad609869fe2110666ba9261c3a183",
+      "run_id": "2026-11-24.V18-BIO5.contract.v1",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-24T16:07:35.838122+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "d05ab0ca867ad609869fe2110666ba9261c3a183",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "9e2b917d4e2dfefc42d92e580368a4b05f3aceb296f1a8d4473479728b890c06"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
   ],
   "glossary": [
@@ -1684,6 +1680,43 @@
   ],
   "public_scope": "Gecontroleerde momentopname; geen ruwe datasets, secrets, privélogs of testlabels. Geen live Kaggle-accountkoppeling.",
   "git_snapshots": [
+    {
+      "sha": "d05ab0ca867ad609869fe2110666ba9261c3a183",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
     {
       "sha": "949fb054005c8cb585b9cdf75332ee9ab92fd87a",
       "scores": [
@@ -2352,43 +2385,6 @@
     },
     {
       "sha": "41771e6442b3d4e4cd92bb4e164ffa2f58705255",
-      "scores": [
-        {
-          "version": "2026-11-18.execution_repair.full.v1",
-          "public_mrr": "0.177"
-        },
-        {
-          "version": "2026-11-19.v4_multi_library_override.v1",
-          "public_mrr": 0.263
-        },
-        {
-          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
-          "public_mrr": 0.284
-        },
-        {
-          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
-          "public_mrr": 0.284
-        },
-        {
-          "version": "2026-11-21.v6.official.v1",
-          "public_mrr": 0.298
-        },
-        {
-          "version": "2026-11-21.v7.official.v1",
-          "public_mrr": 0.303
-        },
-        {
-          "version": "2026-11-21.v8.official.v1",
-          "public_mrr": 0.294
-        },
-        {
-          "version": "2026-11-22.v9.official.v2",
-          "public_mrr": 0.313
-        }
-      ]
-    },
-    {
-      "sha": "a9f7ecab58dc54cbbcd656bfe8417cc9ad2f1a22",
       "scores": [
         {
           "version": "2026-11-18.execution_repair.full.v1",
