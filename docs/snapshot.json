@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-24T19:24:14.856130+00:00",
+  "snapshot_at": "2026-11-24T19:44:32.934122+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "ba88229a3f9fed33690eca09aa1e5b6b07d9f3c8",
   "components": [
@@ -203,58 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "time": "2026-11-23T20:14:27.054330+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [
-        "GOV-01"
-      ],
-      "commit": "5ebf5a03d7d63b9ac4cbebac0a9dd24965a5d8e2",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "b00fa0d7348ed0faa86860797c0e283bfa46a6b893b015c52aef7d9fb754b4b5"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
-    {
-      "time": "2026-11-23T20:37:44.933440+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [
-        "GOV-01"
-      ],
-      "commit": "5ebf5a03d7d63b9ac4cbebac0a9dd24965a5d8e2",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
-    {
-      "event_id": "registry-d25d9e14af75487455e0388bc74c4a1af495fa2a996bebb114b3200d8e43b931",
-      "time": "2026-11-23T20:38:48.143263+00:00",
-      "type": "registry_record_updated",
-      "component_ids": [
-        "VAL-01"
-      ],
-      "commit": "5ebf5a03d7d63b9ac4cbebac0a9dd24965a5d8e2",
-      "run_id": "2026-11-23.pyspark.foundation.v2",
-      "metrics": {},
-      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
-    },
-    {
-      "time": "2026-11-23T20:38:48.143604+00:00",
-      "type": "event_stream_updated",
-      "component_ids": [],
-      "commit": "5ebf5a03d7d63b9ac4cbebac0a9dd24965a5d8e2",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "43f401bdcfc14bb25ba2ed552f0c797fcfde775c5f5867b7e25e4537cb823413"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
     {
       "event_id": "registry-0383bfd183685b2b8999422f6eede867e7261376ef41ccd7b8133fcc1e57a498",
       "time": "2026-11-23T20:44:52.998565+00:00",
@@ -1406,6 +1354,54 @@
     {
       "time": "2026-11-24T19:24:14.855893+00:00",
       "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "ba88229a3f9fed33690eca09aa1e5b6b07d9f3c8",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "6f8778b269b94287c8130448f7440dbef4803606691fde1a1a6fe5558118a032"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-b9b19d08ce202ccd27335b108b7f592abae74b45c61f412563d964260d7297eb",
+      "time": "2026-11-24T19:44:32.933583+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "ba88229a3f9fed33690eca09aa1e5b6b07d9f3c8",
+      "run_id": "2026-11-24.V22.H2eSpec.PCP300.BIO5",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-30e77327fbe9b8998045189fc8b5bbe2a909ddcf98416ea2173515c75cc42d2a",
+      "time": "2026-11-24T19:44:32.933646+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "ba88229a3f9fed33690eca09aa1e5b6b07d9f3c8",
+      "run_id": "2026-11-24.V22.H2eSpec.PCP300.M1only",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-10dff7aac57b549379275f962e9a04e82fa1b728af9a93116b8291db35531fba",
+      "time": "2026-11-24T19:44:32.933656+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "ba88229a3f9fed33690eca09aa1e5b6b07d9f3c8",
+      "run_id": "2026-11-24.V22.H2eSpec.PCP300.noBIO5",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-24T19:44:32.934025+00:00",
+      "type": "event_stream_updated",
       "component_ids": [],
       "commit": "ba88229a3f9fed33690eca09aa1e5b6b07d9f3c8",
       "hashes": {
