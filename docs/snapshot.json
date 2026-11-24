@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-24T00:04:54.913960+00:00",
+  "snapshot_at": "2026-11-24T00:23:07.777332+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
   "components": [
@@ -1284,6 +1284,66 @@
       "component_ids": [
         "GOV-01"
       ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "b33a9e241c8377ae0cf754917c647b96c851d815d9684040f46f5a4ef2e2ae3e"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-89405dbfcdb3039122ff5e66241e7018686cfd6c20bf1ca72550af6ffbb89c10",
+      "time": "2026-11-24T00:23:07.776806+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "run_id": "2026-11-24.V19.gravity_routing",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-aed7790e092bf14f7a0a3c980ed6b52935c5feacb1001b61666f1496403ea4b5",
+      "time": "2026-11-24T00:23:07.776881+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "run_id": "2026-11-24.V20.gravity_routing",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-d8bc3528adaaf8a997c0040030fa4c014fb7d5c82f12771591e7f0040975a3e2",
+      "time": "2026-11-24T00:23:07.776889+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "run_id": "2026-11-24.paper.v36",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-c13afdf24a4ba7044175c66eaee16e67f6f337910401468f6d38d7f3e04b8769",
+      "time": "2026-11-24T00:23:07.776895+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
+      "run_id": "2026-11-24.paper.v37",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-24T00:23:07.777237+00:00",
+      "type": "event_stream_updated",
+      "component_ids": [],
       "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
       "hashes": {
         "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
