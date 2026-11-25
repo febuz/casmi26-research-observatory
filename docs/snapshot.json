@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-25T06:16:45.981245+00:00",
+  "snapshot_at": "2026-11-25T08:43:56.960736+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "59340b00406a4f876e1716c6102d324709119ac8",
   "components": [
@@ -203,18 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "event_id": "registry-ac20ba933e64e968d96dbcccdadb6970eaffecefafd7285e32e58819fe8c7be0",
-      "time": "2026-11-23T20:53:09.119856+00:00",
-      "type": "registry_record_updated",
-      "component_ids": [
-        "VAL-01"
-      ],
-      "commit": "5954ba28ea4dcbbcab6b41e543eaad2a4de2dcea",
-      "run_id": "2026-11-23.framework.spark.v2",
-      "metrics": {},
-      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
-    },
     {
       "time": "2026-11-23T20:53:09.127526+00:00",
       "type": "event_stream_updated",
@@ -1408,6 +1396,20 @@
         "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
         "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
         "source_guard": "6f8778b269b94287c8130448f7440dbef4803606691fde1a1a6fe5558118a032"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "time": "2026-11-25T08:43:56.960616+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [
+        "GOV-01"
+      ],
+      "commit": "59340b00406a4f876e1716c6102d324709119ac8",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "2d4fe442c350ab1b725a0d5ac8577f21abaf88fd3a9bedc52e22046a33d10c32"
       },
       "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
