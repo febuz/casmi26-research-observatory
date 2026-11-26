@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-26T20:58:41.058369+00:00",
+  "snapshot_at": "2026-11-26T21:00:43.993261+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "f0c91f5fd6f643cbc9461edfc359e3ad270418b6",
   "components": [
@@ -203,18 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "time": "2026-11-24T17:58:40.478284+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [],
-      "commit": "500ab1bdfd6a46c64265493f7d94d6819b2b0b7c",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "6f8778b269b94287c8130448f7440dbef4803606691fde1a1a6fe5558118a032"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
     {
       "time": "2026-11-24T18:19:56.978774+00:00",
       "type": "artifact_change_observed",
@@ -1406,6 +1394,20 @@
         "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
         "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
         "source_guard": "25bd49180cd9a3db4e28d368a6231296b16c105ffa12d9f7b6346c0b47ca8416"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "time": "2026-11-26T21:00:43.993050+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [
+        "GOV-01"
+      ],
+      "commit": "f0c91f5fd6f643cbc9461edfc359e3ad270418b6",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "227e24e515d7ad1e7da95e02a3c834ff9872af5b3238e9723ff486c00ba8172e"
       },
       "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
