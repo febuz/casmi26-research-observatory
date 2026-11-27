@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-27T11:27:23.071788+00:00",
+  "snapshot_at": "2026-11-27T11:29:26.038017+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "0974242e2fe4a277c86efc9bcbd1863eeae92134",
   "components": [
@@ -203,30 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "time": "2026-11-25T19:39:29.791944+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [],
-      "commit": "26732aebce4d3bb1adf95383abafa7eb0ee5436c",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "2d4fe442c350ab1b725a0d5ac8577f21abaf88fd3a9bedc52e22046a33d10c32"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
-    {
-      "time": "2026-11-26T07:07:28.699057+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [],
-      "commit": "262ca4680339fd5fe4bad3ee5ca72df775556408",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "2d4fe442c350ab1b725a0d5ac8577f21abaf88fd3a9bedc52e22046a33d10c32"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
     {
       "time": "2026-11-26T07:41:48.895776+00:00",
       "type": "artifact_change_observed",
@@ -1403,6 +1379,30 @@
     },
     {
       "time": "2026-11-27T11:27:23.071664+00:00",
+      "type": "event_stream_updated",
+      "component_ids": [],
+      "commit": "0974242e2fe4a277c86efc9bcbd1863eeae92134",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-e679723f7e1866d0c08220460f48e8d0bf4661c3a8206754e3ff06f5bc7c2744",
+      "time": "2026-11-27T11:29:26.036767+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "0974242e2fe4a277c86efc9bcbd1863eeae92134",
+      "run_id": "2026-11-27.submit-own.output-audit.v1",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-27T11:29:26.037886+00:00",
       "type": "event_stream_updated",
       "component_ids": [],
       "commit": "0974242e2fe4a277c86efc9bcbd1863eeae92134",
