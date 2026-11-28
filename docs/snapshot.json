@@ -1,7 +1,7 @@
 {
-  "snapshot_at": "2026-11-28T15:50:17.841388+00:00",
+  "snapshot_at": "2026-11-28T15:52:21.472858+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
-  "code_commit": "5201c377d1ec61030f837f7c35ecc3f79fadb689",
+  "code_commit": "dd2dc098918db67d5318762959e902f26d53dd5d",
   "components": [
     {
       "id": "UI-01",
@@ -203,18 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "time": "2026-11-27T23:08:44.662153+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [],
-      "commit": "7c459c81882d5752dcacca9c5f0e83d3925150e7",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
     {
       "time": "2026-11-27T23:10:48.713698+00:00",
       "type": "artifact_change_observed",
@@ -1412,6 +1400,18 @@
         "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
       },
       "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "time": "2026-11-28T15:52:21.471793+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "dd2dc098918db67d5318762959e902f26d53dd5d",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
     }
   ],
   "glossary": [
@@ -1674,6 +1674,43 @@
   ],
   "public_scope": "Gecontroleerde momentopname; geen ruwe datasets, secrets, privélogs of testlabels. Geen live Kaggle-accountkoppeling.",
   "git_snapshots": [
+    {
+      "sha": "dd2dc098918db67d5318762959e902f26d53dd5d",
+      "scores": [
+        {
+          "version": "2026-11-18.execution_repair.full.v1",
+          "public_mrr": "0.177"
+        },
+        {
+          "version": "2026-11-19.v4_multi_library_override.v1",
+          "public_mrr": 0.263
+        },
+        {
+          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
+          "public_mrr": 0.284
+        },
+        {
+          "version": "2026-11-21.v6.official.v1",
+          "public_mrr": 0.298
+        },
+        {
+          "version": "2026-11-21.v7.official.v1",
+          "public_mrr": 0.303
+        },
+        {
+          "version": "2026-11-21.v8.official.v1",
+          "public_mrr": 0.294
+        },
+        {
+          "version": "2026-11-22.v9.official.v2",
+          "public_mrr": 0.313
+        }
+      ]
+    },
     {
       "sha": "5201c377d1ec61030f837f7c35ecc3f79fadb689",
       "scores": [
@@ -2342,43 +2379,6 @@
     },
     {
       "sha": "d6799343c04f3241b7d08d493704e084cbcc3c15",
-      "scores": [
-        {
-          "version": "2026-11-18.execution_repair.full.v1",
-          "public_mrr": "0.177"
-        },
-        {
-          "version": "2026-11-19.v4_multi_library_override.v1",
-          "public_mrr": 0.263
-        },
-        {
-          "version": "2026-11-19.v5_v4_plus_documentation_prior.v1",
-          "public_mrr": 0.284
-        },
-        {
-          "version": "2026-11-19.v5b_v4_plus_prior_bundle.v1",
-          "public_mrr": 0.284
-        },
-        {
-          "version": "2026-11-21.v6.official.v1",
-          "public_mrr": 0.298
-        },
-        {
-          "version": "2026-11-21.v7.official.v1",
-          "public_mrr": 0.303
-        },
-        {
-          "version": "2026-11-21.v8.official.v1",
-          "public_mrr": 0.294
-        },
-        {
-          "version": "2026-11-22.v9.official.v2",
-          "public_mrr": 0.313
-        }
-      ]
-    },
-    {
-      "sha": "616fec4dd378824acad31b43373b82816560b112",
       "scores": [
         {
           "version": "2026-11-18.execution_repair.full.v1",
