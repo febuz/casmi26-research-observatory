@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-28T16:11:42.989052+00:00",
+  "snapshot_at": "2026-11-28T16:16:49.583623+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "d37ef5c46b621337f2c2dd216b8d17681e467a32",
   "components": [
@@ -203,42 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "time": "2026-11-27T23:17:58.263852+00:00",
-      "type": "event_stream_updated",
-      "component_ids": [],
-      "commit": "ad036c28099f38afd185fb0eac2abac3186b5253",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
-    {
-      "time": "2026-11-27T23:26:04.046674+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [],
-      "commit": "857aecd92cddb25c0f581d60663a420b95f178d8",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
-    {
-      "time": "2026-11-27T23:27:06.679530+00:00",
-      "type": "artifact_change_observed",
-      "component_ids": [],
-      "commit": "4f9ccff51190733fc6d3d0ffd668c97e3bb7db89",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
     {
       "event_id": "registry-d6b21de78659a51ab9a2cc3db3ad349ad7280f70a23dd5a812510754a6be74c0",
       "time": "2026-11-27T23:47:19.271735+00:00",
@@ -1402,6 +1366,42 @@
     {
       "time": "2026-11-28T16:11:42.988473+00:00",
       "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "d37ef5c46b621337f2c2dd216b8d17681e467a32",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-7ccb3ee35f69bd9f90abdd47b68d2648c3a0b0719007a89af038bb5c29e25a00",
+      "time": "2026-11-28T16:16:49.583089+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "d37ef5c46b621337f2c2dd216b8d17681e467a32",
+      "run_id": "2026-11-28.V27.ExtLib.TrainOnly.Screen.v3",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-f4f5d17ffaa3d0c8e9d657fe9b2b11f6a94829a19a0c4f83f1f5620758adedaf",
+      "time": "2026-11-28T16:16:49.583155+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "d37ef5c46b621337f2c2dd216b8d17681e467a32",
+      "run_id": "2026-11-28.V27.ExtLib.TrainOnly.Screen.v4",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-28T16:16:49.583445+00:00",
+      "type": "event_stream_updated",
       "component_ids": [],
       "commit": "d37ef5c46b621337f2c2dd216b8d17681e467a32",
       "hashes": {
