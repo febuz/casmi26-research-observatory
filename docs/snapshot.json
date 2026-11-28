@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-11-28T16:17:52.475149+00:00",
+  "snapshot_at": "2026-11-28T16:23:59.409995+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
   "code_commit": "ada369c12e0bb961852fd49f55d002988874a86e",
   "components": [
@@ -203,42 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "event_id": "registry-0b2675322cf87b55109538b3ba80fa3c8e501c6ed651ce5ae7dba2d6f5a6b56b",
-      "time": "2026-11-27T23:50:22.981042+00:00",
-      "type": "registry_record_updated",
-      "component_ids": [
-        "VAL-01"
-      ],
-      "commit": "4f9ccff51190733fc6d3d0ffd668c97e3bb7db89",
-      "run_id": "2026-11-28.V26c.S2a1.FPNetV7",
-      "metrics": {},
-      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
-    },
-    {
-      "time": "2026-11-27T23:50:22.981451+00:00",
-      "type": "event_stream_updated",
-      "component_ids": [],
-      "commit": "4f9ccff51190733fc6d3d0ffd668c97e3bb7db89",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
-    {
-      "event_id": "registry-9f2a02139e712b74421cc5a43e975081e419bdfa978e9f1d470cc1c91c7a1d03",
-      "time": "2026-11-28T01:08:05.909469+00:00",
-      "type": "registry_record_updated",
-      "component_ids": [
-        "VAL-01"
-      ],
-      "commit": "4f9ccff51190733fc6d3d0ffd668c97e3bb7db89",
-      "run_id": "2026-11-28.Pad57.Node2A6000.EvalRecovery",
-      "metrics": {},
-      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
-    },
     {
       "time": "2026-11-28T01:08:05.909963+00:00",
       "type": "event_stream_updated",
@@ -1402,6 +1366,42 @@
     {
       "time": "2026-11-28T16:17:52.474968+00:00",
       "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "ada369c12e0bb961852fd49f55d002988874a86e",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "event_id": "registry-55406b3a648db68c29a0f5ffe91dce0684fb55b7345e1470fc900837f1a57d71",
+      "time": "2026-11-28T16:23:59.404189+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "ada369c12e0bb961852fd49f55d002988874a86e",
+      "run_id": "2026-11-28.V27b.V26a.ICEBERG.GLACIER.v1",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "event_id": "registry-72afa4321ca3a617bd9d5beca5c672d926ec386e31fb3b759009d6fb682bc660",
+      "time": "2026-11-28T16:23:59.404685+00:00",
+      "type": "registry_record_updated",
+      "component_ids": [
+        "VAL-01"
+      ],
+      "commit": "ada369c12e0bb961852fd49f55d002988874a86e",
+      "run_id": "2026-11-28.V27b.V26a.ICEBERG.GLACIER.v2",
+      "metrics": {},
+      "message": "Registryrecord gewijzigd. Dit is een geregistreerde uitkomst; onafhankelijke review en meetbereik blijven afzonderlijk te controleren."
+    },
+    {
+      "time": "2026-11-28T16:23:59.409886+00:00",
+      "type": "event_stream_updated",
       "component_ids": [],
       "commit": "ada369c12e0bb961852fd49f55d002988874a86e",
       "hashes": {
