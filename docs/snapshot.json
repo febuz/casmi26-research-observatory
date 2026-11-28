@@ -1,7 +1,7 @@
 {
-  "snapshot_at": "2026-11-28T16:08:35.902206+00:00",
+  "snapshot_at": "2026-11-28T16:09:38.809665+00:00",
   "source_snapshot_at": "2026-11-23T12:11:54.655219+00:00",
-  "code_commit": "dd2dc098918db67d5318762959e902f26d53dd5d",
+  "code_commit": "525dd76af5c13dca7c7ec156ed6fa6ec974ed9ed",
   "components": [
     {
       "id": "UI-01",
@@ -203,18 +203,6 @@
     "notebook": "https://www.kaggle.com/code/develuse/casmi26-context-policy-diagnostic"
   },
   "events": [
-    {
-      "time": "2026-11-27T23:16:55.682200+00:00",
-      "type": "event_stream_updated",
-      "component_ids": [],
-      "commit": "ad036c28099f38afd185fb0eac2abac3186b5253",
-      "hashes": {
-        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
-        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
-        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
-      },
-      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
-    },
     {
       "event_id": "registry-98791ca7fc35e1ceebc0f8bd5d73aa49ad85ec186ed419e2cf353e7c26b21fa7",
       "time": "2026-11-27T23:17:58.263560+00:00",
@@ -1404,6 +1392,18 @@
       "type": "event_stream_updated",
       "component_ids": [],
       "commit": "dd2dc098918db67d5318762959e902f26d53dd5d",
+      "hashes": {
+        "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
+        "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
+        "source_guard": "9ee9795e2dee46b80d10df9e12716591af8032fa8b100e38301d0e9d986f0cd7"
+      },
+      "message": "Wijziging in aangesloten bewijsbestanden of Git HEAD waargenomen; inhoudelijke effectmeting afzonderlijk bekijken."
+    },
+    {
+      "time": "2026-11-28T16:09:38.809479+00:00",
+      "type": "artifact_change_observed",
+      "component_ids": [],
+      "commit": "525dd76af5c13dca7c7ec156ed6fa6ec974ed9ed",
       "hashes": {
         "lineage": "b6dc69437305fe7dbc90e92a739beef1a6b857f9cf551ce429a3fe26211740c2",
         "policy": "9bc47a67b16843f8ee0baee7dda4aa81a727fcdcc036d395f86026064b272562",
